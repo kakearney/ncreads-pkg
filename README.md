@@ -91,8 +91,8 @@ A =
   struct with fields:
 
     avagadros_number: 6.0221e+23
-         temperature: [50&times;1 double]
-               peaks: [50&times;50 int16]
+         temperature: [50x1 double]
+               peaks: [50x50 int16]
 
 
 ```
@@ -119,8 +119,8 @@ B =
 
   struct with fields:
 
-    temperature: [10&times;1 double]
-          peaks: [10&times;50 int16]
+    temperature: [10x1 double]
+          peaks: [10x50 int16]
 
 
 ```
