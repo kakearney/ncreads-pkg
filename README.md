@@ -5,10 +5,13 @@
 Author: Kelly Kearney
 
 
-This repository includes the code for the `ncreads.m` Matlab function, along with all dependent functions required to run it.
+This repository includes the code for the `ncreads.m` and `ncreadsseries` Matlab functions, along with all dependent functions required to run them.
 
 
-This function provides a wrapper around the `ncread.m` function, allowing multiple variables to be read in at once.
+The `ncreads` function offers the ability to read multiple variables from a netCDF file.  It provides a wrapper around the native `ncread` function, with the additional benefit of allowing consistent subsetting along one or more dimensions for all variables read.
+
+
+NetCDF files often hold very large datasets.  In order to keep file sizes somewhat manageable, it's common practice in ocean science (and probably other fields as well) to break datasets into several files along a record (unlimited) dimension.  The `ncreadsseries` function is identical to the `ncreads` function except that it reads data from one of these series of files.  In addition to eliminating the need to loop over files to read in  data, this function figures out which variables include the record dimension, and eliminates repeated reading of those variables that do not span multiple files.
 
 
 
@@ -17,7 +20,7 @@ This function provides a wrapper around the `ncread.m` function, allowing multip
             
 - Getting started        
 - Syntax        
-- Examples        
+- Example: Reading variables from a single file        
 - Contributions
 
 ## Getting started
@@ -55,6 +58,7 @@ ncreads-pkg/ncreads
 ```
 Data = ncreads(file, var1, var2, ...)
 Data = ncreads(file, Scs, var1, var2, ...)
+Data = ncreadsseries(files, ...)
 ```
 
 
@@ -62,7 +66,8 @@ Input variables:
 
 
 
-  - `file`: name of netCDF file
+  - `file`: name of netCDF file (string or character array)
+  - `files`: names of netCDF files (cell array of strings or character   arrays)
   - `Scs`: structure whose fieldnames match a dimension in the file, each   of which holds a 1 x 3 start-count-stride vector.
   - `var#`: name of a variable in the file to be read in
 
@@ -70,7 +75,7 @@ See function header for full description of input and output variables.
 
 
 
-## Examples
+## Example: Reading variables from a single file
 
 
 We can read in all the variables from the example.nc file:
@@ -98,7 +103,7 @@ A =
 ```
 
 
-The Scs structure input can be used to read in a subset of the variables. You specify how to subset each dimension, and any read-in variable that inlcudes that dimension will be subset accordingly.
+The Scs structure input can be used to read in a subset of the variables. You specify how to subset each dimension, and any read-in variable that includes that dimension will be subset accordingly.
 
 
 
@@ -107,7 +112,7 @@ The Scs structure input can be used to read in a subset of the variables. You sp
 
 Scs = struct('x', [2 Inf 5]);
 
-B = ncreads('example.nc', Scs, 'temperature', 'peaks')
+B = ncreads('example.nc', Scs)
 ```
 
 
@@ -119,8 +124,9 @@ B =
 
   struct with fields:
 
-    temperature: [10x1 double]
-          peaks: [10x50 int16]
+    avagadros_number: 6.0221e+23
+         temperature: [10x1 double]
+               peaks: [10x50 int16]
 
 
 ```
