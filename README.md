@@ -5,7 +5,7 @@
 Author: Kelly Kearney
 
 
-This repository includes the code for the `ncreads.m` and `ncreadsseries` Matlab functions, along with all dependent functions required to run them.
+This repository includes the code for the `ncreads.m` and `ncreadsseries.m` Matlab functions, along with all dependent functions required to run them.
 
 
 The `ncreads` function offers the ability to read multiple variables from a netCDF file.  It provides a wrapper around the native `ncread` function, with the additional benefit of allowing consistent subsetting along one or more dimensions for all variables read.
@@ -148,9 +148,6 @@ To report bugs, please submit [an issue](https://github.com/kakearney/ncreads-pk
   - code/data to reproduce the error or buggy behavior, and the full text of any error messages received
 
 Please also feel free to submit enhancement requests, or to send pull requests (via GitHub) for bug fixes or new features.
-
-
-I do monitor the MatlabCentral FileExchange entry for any issues raised in the comments, but would prefer to track issues on GitHub.
 
 
 

@@ -1,9 +1,9 @@
 %% |ncreads.m|: Read multiple variables from a netCDF file
 % Author: Kelly Kearney
 %
-% This repository includes the code for the |ncreads.m| and |ncreadsseries|
-% Matlab functions, along with all dependent functions required to run
-% them.
+% This repository includes the code for the |ncreads.m| and
+% |ncreadsseries.m| Matlab functions, along with all dependent functions
+% required to run them.  
 %
 % The |ncreads| function offers the ability to read multiple variables from
 % a netCDF file.  It provides a wrapper around the native |ncread|
@@ -86,8 +86,5 @@ B = ncreads('example.nc', Scs)
 % 
 % Please also feel free to submit enhancement requests, or to send pull
 % requests (via GitHub) for bug fixes or new features. 
-% 
-% I do monitor the MatlabCentral FileExchange entry for any issues raised
-% in the comments, but would prefer to track issues on GitHub. 
 
 
