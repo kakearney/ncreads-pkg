@@ -1,6 +1,14 @@
 %% |ncreads.m|: Read multiple variables from a netCDF file
 % Author: Kelly Kearney
 %
+% *Note:* The functions in this package (|ncreads| and |ncreadsseries|)
+% have now been merged into a single function (|ncstruct|) which has been
+% folded into the <https://github.com/chadagreene/CDT Climate Data
+% Toolbox>. I will retain this repository for back-compatibility purposes,
+% but am no longer updating the code here, and recommend users move to the
+% newer CDT code (which also offers a number of companion utilities to
+% assist in reading and writing netCDF data in Matlab).
+%
 % This repository includes the code for the |ncreads.m| and
 % |ncreadsseries.m| Matlab functions, along with all dependent functions
 % required to run them.  
