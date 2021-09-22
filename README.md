@@ -4,9 +4,12 @@
 
 Author: Kelly Kearney
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-**Note:** The functions in this package (`ncreads` and `ncreadsseries`) have now been merged into a single function (`ncstruct`) which has been folded into the [Climate Data Toolbox](https://github.com/chadagreene/CDT). I will retain this repository for back-compatibility purposes, but am no longer updating the code here, and recommend users move to the newer CDT code (which also offers a number of companion utilities to assist in reading and writing netCDF data in Matlab).
 
+**NOTE:** The functions in this package (`ncreads` and `ncreadsseries`) have now been merged into a single function (`ncstruct`) which has been folded into the [Climate Data Toolbox](https://github.com/chadagreene/CDT). I will retain this repository for back-compatibility purposes, but am no longer updating the code here, and recommend users move to the newer CDT code (which also offers a number of companion utilities to assist in reading and writing netCDF data in Matlab).
+
+## [Pre-deprecation documentation below]
 
 This repository includes the code for the `ncreads.m` and `ncreadsseries.m` Matlab functions, along with all dependent functions required to run them.
 
